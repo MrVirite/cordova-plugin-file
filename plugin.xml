@@ -34,76 +34,76 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </engines>
 
     <js-module src="www/DirectoryEntry.js" name="DirectoryEntry">
-        <clobbers target="window.DirectoryEntry" />
+        <clobbers target="CordovaFile.DirectoryEntry"/>
     </js-module>
 
     <js-module src="www/DirectoryReader.js" name="DirectoryReader">
-        <clobbers target="window.DirectoryReader" />
+        <clobbers target="CordovaFile.DirectoryReader"/>
     </js-module>
 
     <js-module src="www/Entry.js" name="Entry">
-        <clobbers target="window.Entry" />
+        <clobbers target="CordovaFile.Entry"/>
     </js-module>
 
     <js-module src="www/File.js" name="File">
-        <clobbers target="window.File"/>
+        <clobbers target="CordovaFile.File"/>
     </js-module>
 
     <js-module src="www/FileEntry.js" name="FileEntry">
-        <clobbers target="window.FileEntry" />
+        <clobbers target="CordovaFile.FileEntry"/>
     </js-module>
 
     <js-module src="www/FileError.js" name="FileError">
-        <clobbers target="window.FileError" />
+        <clobbers target="CordovaFile.FileError"/>
     </js-module>
 
     <js-module src="www/FileReader.js" name="FileReader">
-        <clobbers target="window.FileReader" />
+        <clobbers target="CordovaFile.FileReader"/>
     </js-module>
 
     <js-module src="www/FileSystem.js" name="FileSystem">
-        <clobbers target="window.FileSystem" />
+        <clobbers target="CordovaFile.FileSystem"/>
     </js-module>
 
     <js-module src="www/FileUploadOptions.js" name="FileUploadOptions">
-        <clobbers target="window.FileUploadOptions" />
+        <clobbers target="CordovaFile.FileUploadOptions"/>
     </js-module>
 
     <js-module src="www/FileUploadResult.js" name="FileUploadResult">
-        <clobbers target="window.FileUploadResult" />
+        <clobbers target="CordovaFile.FileUploadResult"/>
     </js-module>
 
     <js-module src="www/FileWriter.js" name="FileWriter">
-        <clobbers target="window.FileWriter" />
+        <clobbers target="CordovaFile.FileWriter"/>
     </js-module>
 
     <js-module src="www/Flags.js" name="Flags">
-        <clobbers target="window.Flags" />
+        <clobbers target="CordovaFile.Flags"/>
     </js-module>
 
     <js-module src="www/LocalFileSystem.js" name="LocalFileSystem">
         <!-- Non-standards way -->
-        <clobbers target="window.LocalFileSystem" />
+        <clobbers target="CordovaFile.LocalFileSystem"/>
         <!-- Standards-compliant way -->
-        <merges target="window" />
+        <merges target="CordovaFile"/>
     </js-module>
 
     <js-module src="www/Metadata.js" name="Metadata">
-        <clobbers target="window.Metadata" />
+        <clobbers target="CordovaFile.Metadata"/>
     </js-module>
 
     <js-module src="www/ProgressEvent.js" name="ProgressEvent">
-        <clobbers target="window.ProgressEvent" />
+        <clobbers target="CordovaFile.ProgressEvent"/>
     </js-module>
 
     <js-module src="www/fileSystems.js" name="fileSystems" />
 
     <js-module src="www/requestFileSystem.js" name="requestFileSystem">
-        <clobbers target="window.requestFileSystem" />
+        <clobbers target="CordovaFile.requestFileSystem"/>
     </js-module>
 
     <js-module src="www/resolveLocalFileSystemURI.js" name="resolveLocalFileSystemURI">
-        <merges target="window" />
+        <merges target="CordovaFile"/>
     </js-module>
 
     <!-- Required for browserify: we always link module below as there is conditional reference
@@ -225,9 +225,9 @@ to config.xml in order for the application to find previously stored files.
         </js-module>
     </platform>
 
-    <!-- windows -->
-    <platform name="windows">
-        <js-module src="src/windows/FileProxy.js" name="FileProxy">
+    <!-- CordovaFiles -->
+    <platform name="CordovaFiles">
+        <js-module src="src/CordovaFiles/FileProxy.js" name="FileProxy">
             <runs />
         </js-module>
 
@@ -253,7 +253,7 @@ to config.xml in order for the application to find previously stored files.
         </js-module>
 
         <js-module src="www/browser/FileSystem.js" name="firefoxFileSystem">
-            <merges target="window.FileSystem" />
+            <merges target="CordovaFile.FileSystem"/>
         </js-module>
     </platform>
 
