@@ -663,32 +663,9 @@ public class FileUtils extends CordovaPlugin {
                     JSONArray args = new JSONArray(rawArgs);
                     f.run(args);
                 } catch ( Exception e) {
-                    if( e instanceof EncodingException){
-                        callbackContext.error(FileUtils.ENCODING_ERR);
-                    } else if(e instanceof FileNotFoundException) {
-                        callbackContext.error(FileUtils.NOT_FOUND_ERR);
-                    } else if(e instanceof FileExistsException) {
-                        callbackContext.error(FileUtils.PATH_EXISTS_ERR);
-                    } else if(e instanceof NoModificationAllowedException ) {
-                        callbackContext.error(FileUtils.NO_MODIFICATION_ALLOWED_ERR);
-                    } else if(e instanceof InvalidModificationException ) {
-                        callbackContext.error(FileUtils.INVALID_MODIFICATION_ERR);
-                    } else if(e instanceof MalformedURLException ) {
-                        callbackContext.error(FileUtils.ENCODING_ERR);
-                    } else if(e instanceof IOException ) {
-                        callbackContext.error(FileUtils.INVALID_MODIFICATION_ERR);
-                    } else if(e instanceof EncodingException ) {
-                        callbackContext.error(FileUtils.ENCODING_ERR);
-                    } else if(e instanceof TypeMismatchException ) {
-                        callbackContext.error(FileUtils.TYPE_MISMATCH_ERR);
-                    } else if(e instanceof JSONException ) {
-                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
-                    } else if (e instanceof SecurityException) {
-                        callbackContext.error(FileUtils.SECURITY_ERR);
-                    } else {
                         e.printStackTrace();
-                    	callbackContext.error(FileUtils.UNKNOWN_ERR);
-                    }
+
+                        callbackContext.error(e.getMessage());
                 }
             }
         });

@@ -153,7 +153,7 @@ to config.xml in order for the application to find previously stored files.
 
         <!-- android specific file apis -->
         <js-module src="www/android/FileSystem.js" name="androidFileSystem">
-            <merges target="FileSystem" />
+            <merges target="CordovaFile.FileSystem"/>
         </js-module>
         <js-module src="www/fileSystems-roots.js" name="fileSystems-roots">
             <runs/>
