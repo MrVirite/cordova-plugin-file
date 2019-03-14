@@ -159,7 +159,7 @@ to config.xml in order for the application to find previously stored files.
             <runs/>
         </js-module>
         <js-module src="www/fileSystemPaths.js" name="fileSystemPaths">
-            <merges target="cordova" />
+            <merges target="CordovaFile"/>
             <runs/>
         </js-module>
     </platform>
